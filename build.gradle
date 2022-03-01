@@ -4,7 +4,7 @@ plugins {
 	id 'java'
 	id 'war'
 	id 'org.sonarqube' version '3.3'
-	id 'org.sonarqube.gradle.SonarQubeTask'
+	id 'org.sonarqube.gradle.SonarQube'
 }
 
 group = 'com.example'
