@@ -10,6 +10,7 @@ pipeline{
             steps{
                 script{
                     withSonarQubeEnv(credentialsId: 'sonar-token') {
+                                
                                 sh './gradle clean build sonarqube'
                     }
                     
