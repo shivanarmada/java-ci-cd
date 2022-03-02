@@ -7,19 +7,16 @@ pipeline{
                     image "openjdk:11"
                 }
             }
-        stage ('Exec Gradle') {
-            steps {
-             rtGradleRun (
-             tasks: 'build',
-             tool: 'Gradle_Home', // Tool name from Jenkins configuration
-             rootDir: "/var/lib/jenkins/workspace/java-gradle",
-             buildFile: 'build.gradle'
-             )
-            }
-          }
-        }
+            steps{
+                script{
+                    withSonarQubeEnv(credentialsId: 'sonar-token') {
+                                sh 'chmod +x gradlew'
+                                sh './gradle sonarqube'
+                    }
                     
-    }
+                }
 
+            }
+        }
+    }
 }
-  
