@@ -10,8 +10,9 @@ pipeline{
             steps{
                 script{
                     withSonarQubeEnv(credentialsId: 'sonar-token') {
+                                sh 'cd /var/lib/jenkins/workspace/java-gradle'
                                 sh 'chmod +x gradlew'
-                                sh 'cd /var/lib/jenkins/workspace/java-gradle', './gradlew sonarqube'
+                                sh './gradlew sonarqube'
                     }
                     
                 }
