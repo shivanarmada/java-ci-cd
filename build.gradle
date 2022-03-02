@@ -28,8 +28,7 @@ test {
 
 sonarqube {
     properties {
-        property 'sonar.projectKey", 'com.example:sampleWeb'
-		property 'sonar.host.url', 'http://52.186.151.11:9000'
-        property 'sonar.token', '5142459c4418741672317dca2d08c4b78cbfe1e2'
+        property 'sonar.host.url', 'http://52.186.151.11:9000'
+        property 'sonar.login', '******'
     }
 }
